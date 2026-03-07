@@ -1,5 +1,7 @@
 const jwt=require("jsonwebtoken");
-const secret="SomeRandom764"
+const secret=SomeRandom764
+
+
 function createTokenForUser(user){
 const payload={
     id:user._id,
