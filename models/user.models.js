@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 const { createHmac } = require('crypto');
 const { randomBytes } = require('crypto');
 const {Schema,model}=require("mongoose");
-const { createTokenForUser } = require("../services/authentication");
+const { createTokenForUser } = require("../services/authentication.js");
 
 const userSchema=new Schema({
     fullName:{
