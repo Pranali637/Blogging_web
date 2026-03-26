@@ -4,7 +4,7 @@ This project is a backend-focused blogging platform built to understand how real
 
 Instead of React or SPA tools, this app uses server-side rendering with EJS, making it simple, fast, and beginner-friendly.
 
-Built while learning from Piyush Garg’s Node.js backend series.
+Built while learning from tutorials.
 
 Why this project exists
 Most beginners jump straight to React.
