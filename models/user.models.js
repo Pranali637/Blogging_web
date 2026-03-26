@@ -31,17 +31,18 @@ const userSchema=new Schema({
          default:"User"
     },
 },{timestamps:true})
-userSchema.pre("save",function(next){
+userSchema.pre("save",async function(){
     const user=this;
-    if(!user.isModified("Password")) return next();
+    if(!user.isModified("Password")) return;
 
-    const salt=randomBytes(16).toString();
+    const salt=randomBytes(16).toString("hex");
     const hashPassword=createHmac("sha256",salt)
     .update(user.Password)
     .digest("hex")
-    this.salt=salt;
-    this.Password=hashPassword;
-    next();
+    user.salt=salt;
+    user.Password=hashPassword;
+   
+ 
 })
 userSchema.static("matchPasswordAndToken",async function(email,Password){
     const user=await this.findOne({email});

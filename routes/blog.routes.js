@@ -40,7 +40,7 @@ router.post("/comment/:blogId",async(req,res)=>{
   }
   const comment=await Comment.create({
     content:req.body.content,
-    createdBy:req.user.id,
+    createdBy:req.user._id,
     blogId:req.params.blogId,
   })
   return res.redirect(`/blog/${req.params.blogId}`)
@@ -53,7 +53,7 @@ router.post("/blog",upload.single("coverImage"),async(req,res)=>{
     const blog=await Blog.create({
       title,
       body,
-      createdBy:req.user.id,
+      createdBy:req.user._id,
       coverImageUrl:`/uploads/${req.file.filename}`
     }) 
     return res.redirect(`/blog/${blog._id}`);

@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include("./partials/nav") %>
-    <div class="container" mt-3>
+    <div class="container mt-3">
         <form action="/blog" method="post" enctype="multipart/form-data">
 <div class="mb-3">
     <label for="coverImage" class="form-label">coverImage</label>
@@ -22,10 +22,16 @@
         
 <div class="mb-3">
      <label for="body">Body</label>
-    <textarea name="body" class="form-control"id="body"></textarea>
+    <textarea 
+  name="body" 
+  class="form-control" 
+  id="body" 
+  rows="6"
+  style="resize: vertical; white-space: pre-wrap; word-wrap: break-word;">
+</textarea>
      </div>
  <div class="mb-4">
-     <button type="btn btn-info">Submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
     </div>
         </form>
     </div>
